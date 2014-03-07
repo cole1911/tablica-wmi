@@ -1,0 +1,4 @@
+tablica-wmi
+===========
+
+Tablica WMI
