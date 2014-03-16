@@ -16,7 +16,7 @@ namespace tsi_tablia
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlMembershipConnection"].ConnectionString;
             MySqlConnection conn = new MySqlConnection(connStr);
             try
-            {
+            {            
                 //connecting
                 TextBox1.Text="OK";
                 conn.Open();
