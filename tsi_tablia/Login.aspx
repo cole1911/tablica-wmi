@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="tsi_tablia.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="tsi_tablica.Login" %>
 
 <!DOCTYPE html>
 
@@ -10,12 +10,12 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-    
+        <asp:TextBox ID="LoginBox" runat="server"></asp:TextBox>
+        <asp:TextBox TextMode="Password" ID="PassBox" runat="server"></asp:TextBox>
+        <asp:Button ID="loginBtn" Text="Zaloguj" runat="server" />
     </div>
+        <div id="divResultSubmitted" runat="server" />
     </form>
+      
 </body>
 </html>

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tsi_tablica
+namespace tsi_tablia
 {
 
 
-    public partial class WebForm1
+    public partial class index
     {
 
         /// <summary>

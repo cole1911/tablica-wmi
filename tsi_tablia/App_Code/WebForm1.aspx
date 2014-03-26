@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="tsi_tablica.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="tsi_tablia.App_Code.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,6 @@
     <title></title>
 </head>
 <body>
-    Hello world!
     <form id="form1" runat="server">
     <div>
     

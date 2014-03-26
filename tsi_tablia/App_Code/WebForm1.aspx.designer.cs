@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace tsi_tablica
+namespace tsi_tablia.App_Code
 {
 
 

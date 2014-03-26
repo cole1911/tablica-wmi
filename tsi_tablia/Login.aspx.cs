@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace tsi_tablia
+namespace tsi_tablica
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -18,7 +19,7 @@ namespace tsi_tablia
             try
             {            
                 //connecting
-                TextBox1.Text="OK";
+
                 conn.Open();
 
                 string sql = "SELECT `test_name` FROM `test` WHERE `test_id` = 1";
@@ -27,19 +28,42 @@ namespace tsi_tablia
 
                 while (rdr.Read())
                 {
-                    TextBox2.Text= rdr[0].ToString();
+
                 }
                 rdr.Close();
             }
             catch (Exception ex)
             {
                 //error
-                TextBox1.Text = "NOT";
+
             }
 
             conn.Close();
             //done
-            TextBox3.Text = "DONE";
+
+            loginBtn.Click += new EventHandler(loginBtn_ServerClick);
+
+        }
+
+        void loginBtn_ServerClick(object sender, EventArgs e)
+        {
+            LDAPConnector ldap = new LDAPConnector();
+            if (ldap.checkLDAPUser(LoginBox.Text,PassBox.Text))
+            {
+                Hashtable userData = ldap.getLDAPUserData(LoginBox.Text);
+                if (!userData.Equals(null))
+                {
+                    divResultSubmitted.InnerHtml = "Witaj " + userData["name"];
+                }
+                else
+                {
+                    divResultSubmitted.InnerHtml = "Coś poszło źle";
+                }
+            }
+            //else
+            //{
+            //    divResultSubmitted.InnerHtml = "Nie ma takiego użytkownika";
+           // }
         }
 
     }
